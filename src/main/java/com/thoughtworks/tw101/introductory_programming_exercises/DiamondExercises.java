@@ -12,9 +12,8 @@ public class DiamondExercises {
 //              *
 //             ***
 //            *****
-    private static void drawAnIsoscelesTriangle(int n) {
-        int totalRows = n;
-        int leftPadding = n - 1;
+    private static void drawAnIsoscelesTriangle(int totalRows) {
+        int leftPadding = totalRows - 1;
         int totalAsterisks = 1;
         for (int i = 1; i <= totalRows; i++) {
             printString(" ",leftPadding);
