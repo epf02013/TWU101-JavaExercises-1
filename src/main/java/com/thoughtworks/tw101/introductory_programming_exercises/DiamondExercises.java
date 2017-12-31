@@ -17,15 +17,17 @@ public class DiamondExercises {
         int leftPadding = n - 1;
         int totalAsterisks = 1;
         for (int i = 1; i <= totalRows; i++) {
-            for (int j = leftPadding; j > 0; j--)
-                System.out.print(" ");
-            for (int j = 1; j <= totalAsterisks; j++) {
-                System.out.print("*");
-            }
+            printString(" ",leftPadding);
+            printString("*",totalAsterisks);
             leftPadding--;
             System.out.println();
             totalAsterisks = totalAsterisks + 2;
         }
+    }
+
+    private static void printString(String string,int numberOfTimes) {
+        for (int j = numberOfTimes; j > 0; j--)
+            System.out.print(string);
     }
 
     //    Diamond
@@ -40,11 +42,8 @@ public class DiamondExercises {
         int totalAsterisks = 1;
         int leftPadding = n - 1;
         for (int i = 1; i <= totalRows; i++) {
-            for (int j = leftPadding; j > 0; j--)
-                System.out.print(" ");
-            for (int j = 1; j <= totalAsterisks; j++) {
-                System.out.print("*");
-            }
+            printString(" ",leftPadding);
+            printString("*",totalAsterisks);
             System.out.println();
             if (i >= n) {
                 leftPadding++;
@@ -70,12 +69,8 @@ public class DiamondExercises {
         int leftPadding = n - 1;
         for (int i = 1; i <= totalRows; i++) {
             if (i != n) {
-                for (int j = leftPadding; j > 0; j--)
-                    System.out.print(" ");
-
-                for (int j = 1; j <= totalAsterisks; j++) {
-                    System.out.print("*");
-                }
+                printString(" ",leftPadding);
+                printString("*",totalAsterisks);
             } else
                 System.out.print("Jackie");
             System.out.println();
