@@ -66,20 +66,26 @@ public class DiamondExercises {
         int totalRows = n + (n - 1);
         int totalAsterisks = 1;
         int leftPadding = n - 1;
-        for (int i = 1; i <= totalRows; i++) {
-            if (i != n) {
-                printString(" ",leftPadding);
-                printString("*",totalAsterisks);
-            } else
-                System.out.print("Jackie");
+
+        for (int i = 1; i < n; i++){
+            printString(" ",leftPadding);
+            printString("*",totalAsterisks);
             System.out.println();
-            if (i >= n) {
-                leftPadding++;
-                totalAsterisks = totalAsterisks - 2;
-            } else {
-                leftPadding--;
-                totalAsterisks = totalAsterisks + 2;
-            }
+            leftPadding--;
+            totalAsterisks = totalAsterisks + 2;
+        }
+
+        System.out.print("Jackie");
+        System.out.println();
+        leftPadding++;
+        totalAsterisks = totalAsterisks - 2;
+
+        for(int i=n;i<=totalRows;i++){
+            printString(" ",leftPadding);
+            printString("*",totalAsterisks);
+            System.out.println();
+            leftPadding++;
+            totalAsterisks = totalAsterisks - 2;
         }
     }
 }
