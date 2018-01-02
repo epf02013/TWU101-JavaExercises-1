@@ -40,6 +40,33 @@ public class DiamondExercises {
         int totalRows = n + (n - 1);
         int totalAsterisks = 1;
         int leftPadding = n - 1;
+        drawADiamondTop(n, totalAsterisks, leftPadding);
+
+        leftPadding=0;
+        totalAsterisks = 2 * (n-1) + 1;
+
+        printString(" ",leftPadding);
+        printString("*",totalAsterisks);
+        System.out.println();
+
+        leftPadding++;
+        totalAsterisks = totalAsterisks - 2;
+
+        drawADiamondBottom(n, totalRows, totalAsterisks, leftPadding);
+
+    }
+
+    private static void drawADiamondBottom(int n, int totalRows, int totalAsterisks, int leftPadding) {
+        for (int i = n+1; i <=totalRows; i++) {
+            printString(" ",leftPadding);
+            printString("*",totalAsterisks);
+            System.out.println();
+            leftPadding++;
+            totalAsterisks = totalAsterisks - 2;
+        }
+    }
+
+    private static void drawADiamondTop(int n, int totalAsterisks, int leftPadding) {
         for (int i = 1; i < n; i++) {
             printString(" ",leftPadding);
             printString("*",totalAsterisks);
@@ -47,14 +74,6 @@ public class DiamondExercises {
             leftPadding--;
             totalAsterisks = totalAsterisks + 2;
         }
-        for (int i = n; i <=totalRows; i++) {
-            printString(" ",leftPadding);
-            printString("*",totalAsterisks);
-            System.out.println();
-            leftPadding++;
-            totalAsterisks = totalAsterisks - 2;
-        }
-
     }
 
     //    Diamond with Name
@@ -70,25 +89,17 @@ public class DiamondExercises {
         int totalAsterisks = 1;
         int leftPadding = n - 1;
 
-        for (int i = 1; i < n; i++){
-            printString(" ",leftPadding);
-            printString("*",totalAsterisks);
-            System.out.println();
-            leftPadding--;
-            totalAsterisks = totalAsterisks + 2;
-        }
+        drawADiamondTop(n,totalAsterisks,leftPadding);
+
+        leftPadding=0;
+        totalAsterisks = 2 * (n-1) + 1;
 
         System.out.print("Jackie");
         System.out.println();
+
         leftPadding++;
         totalAsterisks = totalAsterisks - 2;
 
-        for(int i=n;i<totalRows;i++){
-            printString(" ",leftPadding);
-            printString("*",totalAsterisks);
-            System.out.println();
-            leftPadding++;
-            totalAsterisks = totalAsterisks - 2;
-        }
+        drawADiamondBottom(n,totalRows,totalAsterisks,leftPadding);
     }
 }
