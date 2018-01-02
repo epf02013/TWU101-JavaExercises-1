@@ -40,14 +40,13 @@ public class DiamondExercises {
         int totalRows = n + (n - 1);
         int totalAsterisks = 1;
         int leftPadding = n - 1;
+
         drawADiamondTop(n, totalAsterisks, leftPadding);
 
         leftPadding=0;
         totalAsterisks = 2 * (n-1) + 1;
 
-        printString(" ",leftPadding);
-        printString("*",totalAsterisks);
-        System.out.println();
+        drawADiamondLine(totalAsterisks, leftPadding);
 
         leftPadding++;
         totalAsterisks = totalAsterisks - 2;
@@ -58,9 +57,7 @@ public class DiamondExercises {
 
     private static void drawADiamondBottom(int n, int totalRows, int totalAsterisks, int leftPadding) {
         for (int i = n+1; i <=totalRows; i++) {
-            printString(" ",leftPadding);
-            printString("*",totalAsterisks);
-            System.out.println();
+            drawADiamondLine(totalAsterisks, leftPadding);
             leftPadding++;
             totalAsterisks = totalAsterisks - 2;
         }
@@ -68,12 +65,16 @@ public class DiamondExercises {
 
     private static void drawADiamondTop(int n, int totalAsterisks, int leftPadding) {
         for (int i = 1; i < n; i++) {
-            printString(" ",leftPadding);
-            printString("*",totalAsterisks);
-            System.out.println();
+            drawADiamondLine(totalAsterisks, leftPadding);
             leftPadding--;
             totalAsterisks = totalAsterisks + 2;
         }
+    }
+
+    private static void drawADiamondLine(int totalAsterisks, int leftPadding) {
+        printString(" ",leftPadding);
+        printString("*",totalAsterisks);
+        System.out.println();
     }
 
     //    Diamond with Name
