@@ -1,6 +1,5 @@
 package com.thoughtworks.tw101.exercises.exercise8;
 
-import com.thoughtworks.tw101.exercises.exercise7.GameDisplayText;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -20,14 +19,14 @@ public class Game {
     }
 
     public void start(){
-        displayGameText(GameDisplayText.instructions);
+        displayGameText(GameDisplayText.getInstructions());
         getNextGuess();
 
         while(!guessCorrect()){
             analyzeGuess(guess);
             getNextGuess();
         }
-        displayGameText(GameDisplayText.win);
+        displayGameText(GameDisplayText.getWin());
         displayGuesses();
     }
 
@@ -43,9 +42,9 @@ public class Game {
 
     private void analyzeGuess(int guess) {
         if(guess < randomNumber)
-            displayGameText(GameDisplayText.guessTooLow);
+            displayGameText(GameDisplayText.getGuessTooLow());
         else
-            displayGameText(GameDisplayText.guessTooHigh);
+            displayGameText(GameDisplayText.getGuessTooHigh());
     }
 
     private void displayGuesses(){
